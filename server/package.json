@@ -18,9 +18,11 @@
     "fastify": "3.27.0",
     "fastify-plugin": "3.0.0",
     "pino": "^7.6.4",
+    "prisma": "^4.4.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@prisma/client": "^4.4.0",
     "@types/dotenv-flow": "^3.2.0",
     "@types/jest": "^26.0.24",
     "@types/pino": "^7.0.5",

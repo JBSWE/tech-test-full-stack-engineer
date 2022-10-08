@@ -16,7 +16,7 @@ services:
     entrypoint: ["npm", "start"]
     environment:
       NODE_ENV: development
-    image: node:10.15-alpine
+    image: node:18-alpine
     links:
       - database:database
     ports:
