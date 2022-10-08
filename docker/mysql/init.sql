@@ -25,7 +25,7 @@ CREATE TABLE `jobs` (
     `price` int(3) unsigned NOT NULL,
     `description` text NOT NULL,
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `updated_at` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`),
     KEY `idx_jobs_suburb` (`suburb_id`),
     KEY `idx_jobs_category` (`category_id`),
