@@ -1,9 +1,8 @@
 import fp from 'fastify-plugin';
 import type {HttpError} from 'http-errors';
 import * as httpErrors from 'http-errors';
-import {FastifyInstance} from "fastify";
 import {jobs} from "@prisma/client";
-import {jobStatus} from '../../job-status.enum'
+import {declineJob} from "../../../../dao/job.dao";
 
 
 const declineJobPath = '/decline/:jobId';
@@ -25,19 +24,3 @@ export default fp(async server => {
             });
         });
 });
-
-const declineJob = async (server: FastifyInstance, jobId: number): Promise<jobs| undefined> => {
-    try {
-        return await server.prisma.jobs.update({
-            where: {
-                id: jobId
-            },
-            data: {
-                status: jobStatus.DECLINED,
-            },
-        })
-    } catch (e) {
-        const error = e as Error
-        server.log.warn(`Error connecting to the database: ${error.message}`)
-    }
-}
