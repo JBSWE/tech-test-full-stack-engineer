@@ -15,7 +15,7 @@ export default fp(async server => {
 
             if (acceptedJobs.length === 0) {
                 return reply.send(
-                    new httpErrors.NotFound(`Could not find any jobs`)
+                    new httpErrors.NotFound(`Could not find any accepted jobs`)
                 );
             }
 
