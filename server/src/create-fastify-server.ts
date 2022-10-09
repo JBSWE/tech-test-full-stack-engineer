@@ -11,12 +11,18 @@ import prismaConnectorPlugin from "./plugins/prisma/prisma-connector";
 import acceptJob from "./plugins/job/routes/put/accept-job";
 import declineJob from "./plugins/job/routes/put/decline-job";
 
+
 export const createFastifyServer = async (): Promise<FastifyInstance> => {
     const server = fastify<http.Server, http.IncomingMessage, http.ServerResponse, pino.Logger>({
         logger: applicationLogger,
         disableRequestLogging: true,
         genReqId: (req) => extendCorrelationId(req.headers['x-correlation-id'] as Partial<string>),
     });
+
+    server.register(require('fastify-cors'), {
+        origin: "*",
+        methods: ["GET", "PUT"]
+    })
 
     server.register(prismaConnectorPlugin)
 
