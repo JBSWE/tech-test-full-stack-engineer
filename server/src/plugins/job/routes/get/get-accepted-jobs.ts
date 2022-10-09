@@ -9,7 +9,7 @@ import {jobStatus} from '../../job-status.enum'
 const getAcceptedJobsPath = '/accepted-jobs';
 
 export default fp(async server => {
-    server.get<{ Params: any, Reply: any | HttpError }>(
+    server.get<{ Reply: { data: jobs[] } | HttpError }>(
         getAcceptedJobsPath, async (req, reply) => {
             const acceptedJobs = await getAcceptedJobs(server)
 

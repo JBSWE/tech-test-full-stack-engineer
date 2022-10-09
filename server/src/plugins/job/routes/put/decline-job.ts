@@ -9,7 +9,7 @@ import {jobStatus} from '../../job-status.enum'
 const declineJobPath = '/decline/:jobId';
 
 export default fp(async server => {
-    server.put<{ Params: { jobId: number }, Reply: any | HttpError }>(
+    server.put<{ Params: { jobId: number }, Reply: { data: jobs } | HttpError }>(
         declineJobPath, async (req, reply) => {
             const jobId = +req.params.jobId
             const declinedJob = await declineJob(server, jobId)
