@@ -26,13 +26,18 @@ export default fp(async server => {
         });
 });
 
-const declineJob = async (server: FastifyInstance, jobId: number): Promise<jobs> => {
-    return await server.prisma.jobs.update({
-        where: {
-            id: jobId
-        },
-        data: {
-            status: jobStatus.DECLINED,
-        },
-    })
+const declineJob = async (server: FastifyInstance, jobId: number): Promise<jobs| undefined> => {
+    try {
+        return await server.prisma.jobs.update({
+            where: {
+                id: jobId
+            },
+            data: {
+                status: jobStatus.DECLINED,
+            },
+        })
+    } catch (e) {
+        const error = e as Error
+        server.log.warn(`Error connecting to the database: ${error.message}`)
+    }
 }

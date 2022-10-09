@@ -26,10 +26,16 @@ export default fp(async server => {
 });
 
 const getAcceptedJobs = async (server: FastifyInstance): Promise<jobs[]> => {
-    return await server.prisma.jobs.findMany({
-        where:
-            {
-                status: jobStatus.ACCEPTED
-            }
-    })
+    try {
+        return await server.prisma.jobs.findMany({
+            where:
+                {
+                    status: jobStatus.ACCEPTED
+                }
+        })
+    } catch (e) {
+        const error = e as Error
+        server.log.warn(`Error connecting to the database: ${error.message}`)
+        return []
+    }
 }
