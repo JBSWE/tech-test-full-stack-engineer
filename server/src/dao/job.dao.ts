@@ -1,6 +1,6 @@
 import {FastifyInstance} from "fastify";
 import {jobs} from "@prisma/client";
-import {jobStatus} from "../plugins/job/job-status.enum";
+import {jobStatus} from "../plugins/job/models/job-status.enum";
 
 export const getAcceptedJobs = async (server: FastifyInstance): Promise<jobs[]> => {
     try {

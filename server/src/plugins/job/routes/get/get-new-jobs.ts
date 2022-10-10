@@ -1,13 +1,13 @@
 import fp from 'fastify-plugin';
 import type {HttpError} from 'http-errors';
 import * as httpErrors from 'http-errors';
-import {jobs} from '@prisma/client';
 import {getNewJobs} from "../../../../dao/job.dao";
+import {Jobs} from "../../models/job.model";
 
 const getNewJobsPath = '/new-jobs';
 
 export default fp(async server => {
-    server.get<{ Reply: { data: jobs[] } | HttpError }>(
+    server.get<{ Reply: Jobs | HttpError }>(
         getNewJobsPath, async (req, reply) => {
             const newJobs = await getNewJobs(server)
 
