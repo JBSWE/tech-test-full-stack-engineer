@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-scripts": "2.1.2"
+    "axios": "^1.1.2",
+    "luxon": "^3.0.4",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-icons": "^4.1.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.1",
+    "typeface-lato": "^1.1.13"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,84 @@
+.jobCard {
+    background: #fff;
+    width: 100%;
+    margin:20px 0;
+    box-shadow:0 5px 4px 0 rgb(0 0 0 / 20%);
+}
+.jobCard h3,
+.jobCard p {
+    margin:2px;
+}
+.jobCard p {
+    color:#555555;
+}
+.jobCard button {
+    padding:10px 20px;
+    font-size:0.9rem;
+    border:none;
+    margin-right:1rem;
+    font-weight:600;
+    background:#eee;
+    border-bottom:2px solid #bebebe;
+}
+
+.jobCard .initalDiv .nameDiv {
+    font-size:1.4rem;
+    padding:10px;
+    border-radius:50%;
+    margin:0;
+    background:#FF9800;
+    color:#fff;
+    width:45px;
+    height:45px;
+    line-height:25px;
+    text-align:center;
+    margin-right:20px;
+}
+
+.initalDiv {
+    font-size:1.4rem;
+    padding:10px;
+    border-radius:50%;
+    margin:0;
+    background:#FF9800;
+    color:#fff;
+    width:45px;
+    height:45px;
+    line-height:25px;
+    text-align:center;
+    margin-right:20px;
+}
+
+.jobCard .contactDiv a {
+    color:#FF9800;
+    text-decoration:none;
+}
+
+.jobCard .contactDiv {
+    margin:10px 0;
+}
+.jobCard button.primary {
+    background:#FF9800;
+    color:#fff;
+    border-bottom:2px solid #c57602;
+}
+.jobCard .section {
+    padding:10px 20px;
+    border-bottom:1px solid #eee;
+    width:100%;
+}
+.jobCard .nameDiv {
+    display:flex;
+    flex-wrap: nowrap;
+    width:100%;
+    justify-content: flex-start;
+    align-items:center;
+}
+
+.jobCard .buttonDiv {
+    display:flex;
+    flex-wrap: nowrap;
+    width:100%;
+    justify-content: flex-start;
+    align-items:center;
+}

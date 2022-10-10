@@ -1,32 +1,83 @@
-.App {
-  text-align: center;
+nav{
+    display:block;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:space-around;
+    align-items:center;
+    margin:0;
+    padding:0;
+    background:#fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav ul li {
+    display:block;
+    width:100%;
+    text-align:center;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul li:first-child {
+    border-right:2px solid #bebebe;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul li a {
+    font-size:20px;
+    text-decoration:none;
+    color:#000;
+    font-weight:600;
+    display:block;
+    width:100%;
+    padding:15px 0;
+    border-bottom:2px solid #bebebe;
+}
+
+nav ul li a.active {
+    border-bottom:3px solid #FF9800;
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+body {
+    background:#eee;
+    font-family: 'Lato', sans-serif;
+}
+button {
+    font-family: 'Lato', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+    max-width: 960px;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+    max-width: 1440px;
+  margin-left: auto;
 }
